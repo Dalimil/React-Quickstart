@@ -1,8 +1,16 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+# React Quickstart
+Extended [create-react-app](https://github.com/facebookincubator/create-react-app) starter template.  
+It contains demos and sample code to quickly get started with **react-router**, app layout, composition of components, etc.
 
 ## Deployment
+Built project assumes the app is hosted at the server root, unless `homepage` field in `package.json` is specified.
 
-Heroku: 
+**GitHub pages:**
+1. Change `homepage` field in `package.json`
+2. Run `yarn run deploy`
+3. GitHub repo settings should use `gh-pages`
+
+**Heroku:**
 ```sh
 # $HEROKU_APP_NAME can be left out
 heroku create $HEROKU_APP_NAME --buildpack https://github.com/mars/create-react-app-buildpack.git
@@ -49,68 +57,3 @@ Learn more about React Storybook:
 * [GitHub Repo](https://github.com/kadirahq/react-storybook)
 * [Documentation](https://getstorybook.io/docs)
 * [Snapshot Testing](https://github.com/kadirahq/storyshots) with React Storybook
-
-### Building for Relative Paths
-
-By default, Create React App produces a build assuming your app is hosted at the server root.<br>
-To override this, specify the `homepage` in your `package.json`, for example:
-
-```js
-  "homepage": "http://mywebsite.com/relativepath",
-```
-
-This will let Create React App correctly infer the root path to use in the generated HTML file.
-
-
-### GitHub Pages
-
->Note: this feature is available with `react-scripts@0.2.0` and higher.
-
-#### Step 1: Add `homepage` to `package.json`
-
-**The step below is important!**<br>
-**If you skip it, your app will not deploy correctly.**
-
-Open your `package.json` and add a `homepage` field:
-
-```js
-  "homepage": "https://myusername.github.io/my-app",
-```
-
-Create React App uses the `homepage` field to determine the root URL in the built HTML file.
-
-#### Step 2: Install `gh-pages` and add `deploy` to `scripts` in `package.json`
-
-Now, whenever you run `npm run build`, you will see a cheat sheet with instructions on how to deploy to GitHub Pages.
-
-To publish it at [https://myusername.github.io/my-app](https://myusername.github.io/my-app), run:
-
-```sh
-npm install --save-dev gh-pages
-```
-
-Add the following script in your `package.json`:
-
-```js
-  // ...
-  "scripts": {
-    // ...
-    "deploy": "npm run build&&gh-pages -d build"
-  }
-```
-
-(Note: the lack of whitespace is intentional.)
-
-#### Step 3: Deploy the site by running `npm run deploy`
-
-Then run:
-
-```sh
-npm run deploy
-```
-
-#### Step 4: Ensure your project's settings use `gh-pages`
-
-Finally, make sure **GitHub Pages** option in your GitHub project settings is set to use the `gh-pages` branch:
-
-<img src="http://i.imgur.com/HUjEr9l.png" width="500" alt="gh-pages branch setting">
