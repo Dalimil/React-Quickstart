@@ -15,16 +15,16 @@ const Demos = {
 };
 
 class App extends React.Component {
-  constructor(props) {
+	constructor(props) {
 		super(props);
 		this.state = {
 			user: null
 		};
-  }
+	}
 
-  isLoggedIn() {
+	isLoggedIn() {
 		return this.state.user != null;
-  }
+	}
 
 	render() {
 		return (
@@ -50,6 +50,6 @@ class App extends React.Component {
 }
 
 ReactDOM.render(
-  <App />,
-  document.getElementById('root')
+	<App />,
+	document.getElementById('root')
 );

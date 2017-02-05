@@ -22,20 +22,20 @@ const Nav = (props) => (
 
 
 class AppLayout extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <div className="App-intro">
-          <Nav />
-		      {this.props.children} {/* This will be one Route at a time */}
-        </div>
-      </div>
-    );
-  }
+	render() {
+		return (
+			<div className="App">
+				<div className="App-header">
+					<img src={logo} className="App-logo" alt="logo" />
+					<h2>Welcome to React</h2>
+				</div>
+				<div className="App-intro">
+					<Nav />
+					{this.props.children} {/* This will be one Route at a time */}
+				</div>
+			</div>
+		);
+	}
 }
 
 export default AppLayout;
