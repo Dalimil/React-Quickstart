@@ -18,3 +18,6 @@ heroku create $HEROKU_APP_NAME --buildpack https://github.com/mars/create-react-
 git push heroku master
 heroku open
 ```
+
+## Development
+When copying HTML snippets, use: http://magic.reactjs.net/htmltojsx.htm

@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import { Router, Route, IndexRoute, IndexRedirect, hashHistory } from 'react-router';
 
 import './index.css';
 import AppLayout from './components/AppLayout';
 
+import HomePage from './components/pages/Home';
+import FormsPage from './components/pages/Forms';
+import AlertsPage from './components/pages/Alerts';
+import PanelsPage from './components/pages/Panels';
+
 const Demos = {
-	Home: () => <div>--Home Component--</div>,
-	About: () => <div>--About Component--</div>,
 	NotFound: () => <h1>404.. This page is not found!</h1>,
 	Inbox: (props) => (<div><h2>Inbox</h2> {props.children} </div>),
 	InboxHome: () => <div>Inbox Home</div>,
@@ -31,8 +34,14 @@ class App extends React.Component {
 			<Router history={hashHistory} >
 				<Route path="/" component={AppLayout}>
 
-					<IndexRoute component={Demos.Home} />
-					<Route path="about" component={Demos.About} />
+					<IndexRoute component={HomePage} />
+					<Route path="forms" component={FormsPage} />
+					<Route path="web-components">
+						<IndexRedirect to="panels" />
+						<Route path="panels" component={PanelsPage} />
+						<Route path="alerts" component={AlertsPage} />
+					</Route>
+
 					<Route path="inbox" component={Demos.Inbox}>
 						{/* Wrapper could omit the path if it just extends the UI
 							* - in that case IndexRoute would not exist */}
