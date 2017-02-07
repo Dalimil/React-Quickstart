@@ -1,5 +1,5 @@
 import React from 'react';
-import images from '../assets';
+import images from '../../assets';
 
 // DemmoSettings Plugin
 export default (props) => (

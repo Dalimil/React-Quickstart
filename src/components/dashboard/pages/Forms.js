@@ -1,5 +1,5 @@
 import React from 'react';
-import Images from '../../assets';
+import Images from '../../../assets';
 
 export default class FormsPage extends React.Component {
 

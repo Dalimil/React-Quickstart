@@ -1,5 +1,5 @@
 import React from 'react';
-import Images from '../../assets';
+import Images from '../../../assets';
 
 // Docs: https://limonte.github.io/sweetalert2/
 import SweetAlert from 'sweetalert2';

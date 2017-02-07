@@ -1,6 +1,6 @@
 import React from 'react';
 import Chartist from 'chartist';
-import Images from '../../assets';
+import Images from '../../../assets';
 
 export default class MainPanel extends React.Component {
   componentDidMount() {

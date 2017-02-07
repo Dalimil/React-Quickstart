@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import images from '../assets';
+import images from '../../assets';
 
 /**
  * Wrapper from StackOverflow: http://stackoverflow.com/questions/35053161/
@@ -107,12 +107,12 @@ export default class Sidebar extends React.Component {
               </a>
               <div id="pagesExamples" className="collapse">
                 <ul className="nav">
-                  <li>
-                    <a href="#">Login Page</a>
-                  </li>
-                  <li>
-                    <a href="#">Register Page</a>
-                  </li>
+                  <NavItem to='/login'>
+                    Login Page
+                  </NavItem>
+                  <NavItem to='/register'>
+                    Register Page
+                  </NavItem>
                 </ul>
               </div>
             </li>

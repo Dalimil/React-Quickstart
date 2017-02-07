@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, IndexRedirect, hashHistory } from 'react-router';
 
 import './index.css';
-import AppLayout from './components/AppLayout';
+import AppLayout from './components/dashboard/AppLayout';
 
-import HomePage from './components/pages/Home';
-import FormsPage from './components/pages/Forms';
-import AlertsPage from './components/pages/Alerts';
-import PanelsPage from './components/pages/Panels';
+import HomePage from './components/dashboard/pages/Home';
+import FormsPage from './components/dashboard/pages/Forms';
+import AlertsPage from './components/dashboard/pages/Alerts';
+import PanelsPage from './components/dashboard/pages/Panels';
+
+import RegisterPage from './components/landing/pages/Register';
+import LoginPage from './components/landing/pages/Login';
 
 const Demos = {
 	NotFound: () => <h1>404.. This page is not found!</h1>,
@@ -32,6 +35,10 @@ class App extends React.Component {
 	render() {
 		return (
 			<Router history={hashHistory} >
+				
+				<Route path="/login" component={LoginPage} />
+				<Route path="/register" component={RegisterPage} />
+
 				<Route path="/" component={AppLayout}>
 
 					<IndexRoute component={HomePage} />
