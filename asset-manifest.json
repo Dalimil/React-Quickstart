@@ -1,7 +1,21 @@
 {
-  "main.css": "static/css/main.bc708e3a.css",
-  "main.css.map": "static/css/main.bc708e3a.css.map",
-  "main.js": "static/js/main.6860882f.js",
-  "main.js.map": "static/js/main.6860882f.js.map",
-  "static/media/logo.svg": "static/media/logo.5d5d9eef.svg"
+  "main.css": "static/css/main.d41d8cd9.css",
+  "main.css.map": "static/css/main.d41d8cd9.css.map",
+  "main.js": "static/js/main.cf882248.js",
+  "main.js.map": "static/js/main.cf882248.js.map",
+  "static/media/avatar.jpg": "static/media/avatar.7a6bc100.jpg",
+  "static/media/card-1.jpg": "static/media/card-1.6ee66b2c.jpg",
+  "static/media/card-2.jpg": "static/media/card-2.ae10829f.jpg",
+  "static/media/card-3.jpg": "static/media/card-3.4ae4eeff.jpg",
+  "static/media/dock.jpg": "static/media/dock.9d3fb4a5.jpg",
+  "static/media/forest.jpg": "static/media/forest.4d2f2f4b.jpg",
+  "static/media/image-placeholder-square.jpg": "static/media/image-placeholder-square.1eb7fff2.jpg",
+  "static/media/image-placeholder.jpg": "static/media/image-placeholder.ebe9884b.jpg",
+  "static/media/lake.jpg": "static/media/lake.35f7d126.jpg",
+  "static/media/mountains.jpg": "static/media/mountains.59fc83e2.jpg",
+  "static/media/sidebar-1.jpg": "static/media/sidebar-1.61c4c50e.jpg",
+  "static/media/sidebar-2.jpg": "static/media/sidebar-2.d30c9e30.jpg",
+  "static/media/sidebar-3.jpg": "static/media/sidebar-3.c963330b.jpg",
+  "static/media/sidebar-4.jpg": "static/media/sidebar-4.f34e943f.jpg",
+  "static/media/winter.jpg": "static/media/winter.49b54380.jpg"
 }
