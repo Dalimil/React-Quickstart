@@ -1,7 +1,56 @@
 import React from 'react';
 import Images from '../../assets';
 
+// Docs: https://limonte.github.io/sweetalert2/
+import SweetAlert from 'sweetalert2';
+
 export default class AlertsPage extends React.Component {
+
+	showNotification(from, align) {
+    const type = ['','info','success','warning','danger','rose','primary'];
+    const color = Math.floor((Math.random() * 6) + 1);
+    
+    window.$.notify({
+        icon: "notifications",
+        message: "Welcome to <b>Material Dashboard</b> - a beautiful freebie for every web developer."
+    }, {
+        type: type[color],
+        timer: 3000,
+        placement: {
+            from: from,
+            align: align
+        }
+    });
+	}
+
+  createSweetAlertBasic() {
+    SweetAlert({
+      title: "Here's a message!",
+      buttonsStyling: false,
+      confirmButtonClass: "btn btn-success",
+      type: 'success'
+    });
+  }
+
+  createSweetAlertAdvanced() {
+    SweetAlert.queue([{
+      title: 'Your public IP',
+      confirmButtonText: 'Show my public IP',
+      text: 'Your public IP will be received via AJAX request',
+      showLoaderOnConfirm: true,
+      preConfirm: function () {
+        return new Promise((resolve) => {
+          fetch('https://api.ipify.org?format=json')
+          .then(data => data.json())
+          .then(data => {
+            SweetAlert.insertQueueStep(data.ip);
+            resolve(); // our wrapping Promise
+          });
+        });
+      }
+    }]);
+  }
+
   render() {
     return (
       <div className="container-fluid">
@@ -111,26 +160,26 @@ export default class AlertsPage extends React.Component {
                   <div className="row">
                     <div className="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                       <div className="col-md-4">
-                        <button onclick="demo.showNotification('top','left')" className="btn btn-primary btn-block">Top Left</button>
+                        <button onClick={() => this.showNotification('top','left')} className="btn btn-primary btn-block">Top Left</button>
                       </div>
                       <div className="col-md-4">
-                        <button onclick="demo.showNotification('top','center')" className="btn btn-primary btn-block">Top Center</button>
+                        <button onClick={() => this.showNotification('top','center')} className="btn btn-primary btn-block">Top Center</button>
                       </div>
                       <div className="col-md-4">
-                        <button onclick="demo.showNotification('top','right')" className="btn btn-primary btn-block">Top Right</button>
+                        <button onClick={() => this.showNotification('top','right')} className="btn btn-primary btn-block">Top Right</button>
                       </div>
                     </div>
                   </div>
                   <div className="row">
                     <div className="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                       <div className="col-md-4">
-                        <button onclick="demo.showNotification('bottom','left')" className="btn btn-primary btn-block">Bottom Left</button>
+                        <button onClick={() => this.showNotification('bottom','left')} className="btn btn-primary btn-block">Bottom Left</button>
                       </div>
                       <div className="col-md-4">
-                        <button onclick="demo.showNotification('bottom','center')" className="btn btn-primary btn-block">Bottom Center</button>
+                        <button onClick={() => this.showNotification('bottom','center')} className="btn btn-primary btn-block">Bottom Center</button>
                       </div>
                       <div className="col-md-4">
-                        <button onclick="demo.showNotification('bottom','right')" className="btn btn-primary btn-block">Bottom Right</button>
+                        <button onClick={() => this.showNotification('bottom','right')} className="btn btn-primary btn-block">Bottom Right</button>
                       </div>
                     </div>
                   </div>
@@ -250,67 +299,19 @@ export default class AlertsPage extends React.Component {
         </div>
         <div className="places-sweet-alerts">
           <div className="row">
-            <div className="col-md-3">
+            <div className="col-md-4">
               <div className="card">
                 <div className="card-content text-center">
-                  <h5>Basic example</h5>
-                  <button onClick="demo.showSwal('basic')" className="btn btn-rose btn-fill">Try me!</button>
+                  <h5>Basic example of SweetAlert2</h5>
+                  <button onClick={this.createSweetAlertBasic} className="btn btn-rose btn-fill">Try me!</button>
                 </div>
               </div>
             </div>
-            <div className="col-md-3">
+            <div className="col-md-4">
               <div className="card">
                 <div className="card-content text-center">
-                  <h5>A title with a text under</h5>
-                  <button onClick="demo.showSwal('title-and-text')" className="btn btn-rose btn-fill">Try me!</button>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3">
-              <div className="card">
-                <div className="card-content text-center">
-                  <h5>A success message</h5>
-                  <button onClick="demo.showSwal('success-message')" className="btn btn-rose btn-fill">Try me!</button>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3">
-              <div className="card">
-                <div className="card-content text-center">
-                  <h5>Custom HTML description</h5>
-                  <button onClick="demo.showSwal('custom-html')" className="btn btn-rose btn-fill">Try me!</button>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3">
-              <div className="card">
-                <div className="card-content text-center">
-                  <h5>A warning message, with a function attached to the "Confirm" Button...</h5>
-                  <button onclick="demo.showSwal('warning-message-and-confirmation')" className="btn btn-rose btn-fill">Try me!</button>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3">
-              <div className="card">
-                <div className="card-content text-center">
-                  <h5>...and by passing a parameter, you can execute something else for "Cancel"</h5>
-                  <button onclick="demo.showSwal('warning-message-and-cancel')" className="btn btn-rose btn-fill">Try me!</button>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3">
-              <div className="card">
-                <div className="card-content text-center">
-                  <h5>A message with auto close timer set to 2 seconds</h5>
-                  <button onclick="demo.showSwal('auto-close')" className="btn btn-rose btn-fill">Try me!</button>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3">
-              <div className="card">
-                <div className="card-content text-center">
-                  <h5>Modal window with input field</h5>
-                  <button onclick="demo.showSwal('input-field')" className="btn btn-rose btn-fill">Try me!</button>
+                  <h5>More involved SweetAlert2</h5>
+                  <button onClick={this.createSweetAlertAdvanced} className="btn btn-rose btn-fill">Try me!</button>
                 </div>
               </div>
             </div>

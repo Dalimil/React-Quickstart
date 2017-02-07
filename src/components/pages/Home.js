@@ -19,7 +19,7 @@ export default class MainPanel extends React.Component {
         chartPadding: { top: 0, right: 0, bottom: 0, left: 0},
     }
     const dailySalesChart = new Chartist.Line('#dailySalesChart', dataDailySalesChart, optionsDailySalesChart);
-    window.md.startAnimationForLineChart(dailySalesChart);
+    window.md.startAnimationForLineChart(dailySalesChart, Chartist);
 
     const dataCompletedTasksChart = {
         labels: ['12p', '3p', '6p', '9p', '12p', '3a', '6a', '9a'],
@@ -34,7 +34,7 @@ export default class MainPanel extends React.Component {
 
     const completedTasksChart = new Chartist.Line('#completedTasksChart', dataCompletedTasksChart, optionsCompletedTasksChart);
     // start animation for the Completed Tasks Chart - Line Chart
-    window.md.startAnimationForLineChart(completedTasksChart);
+    window.md.startAnimationForLineChart(completedTasksChart, Chartist);
 
     const dataWebsiteViewsChart = {
       labels: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
@@ -58,7 +58,7 @@ export default class MainPanel extends React.Component {
     ];
     const websiteViewsChart = Chartist.Bar('#websiteViewsChart', dataWebsiteViewsChart, optionsWebsiteViewsChart, responsiveOptions);
     // start animation for the Emails Subscription Chart
-    window.md.startAnimationForBarChart(websiteViewsChart);
+    window.md.startAnimationForBarChart(websiteViewsChart, Chartist);
   }
 
   render() {
