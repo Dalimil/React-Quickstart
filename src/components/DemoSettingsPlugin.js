@@ -38,7 +38,7 @@ export default (props) => (
             <p>Sidebar Mini</p>
             <div className="togglebutton switch-sidebar-mini">
               <label>
-                <input type="checkbox" unchecked />
+                <input type="checkbox" />
               </label>
             </div>
             <div className="clearfix" />

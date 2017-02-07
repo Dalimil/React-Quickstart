@@ -2,12 +2,61 @@ import React from 'react';
 import Images from '../../assets';
 
 export default class FormsPage extends React.Component {
+
+  initDatetimepickers() {
+    const widgetIcons = {
+      time: "fa fa-clock-o",
+      date: "fa fa-calendar",
+      up: "fa fa-chevron-up",
+      down: "fa fa-chevron-down",
+      previous: 'fa fa-chevron-left',
+      next: 'fa fa-chevron-right',
+      today: 'fa fa-screenshot',
+      clear: 'fa fa-trash',
+      close: 'fa fa-remove',
+      inline: true
+    };
+    
+    const $ = window.$;
+    $('.datetimepicker').datetimepicker({
+      icons: widgetIcons
+    });
+
+    $('.datepicker').datetimepicker({
+      format: 'MM/DD/YYYY',
+      icons: widgetIcons
+    });
+    
+    $('.timepicker').datetimepicker({
+      format: 'h:mm A', // or use 'H:mm', for 24hours timepicker (no AM/PM toggle shown)
+      icons: widgetIcons
+    });
+  }
+
+  initSliders() {
+    window.$('#sliderRegular').noUiSlider({
+        start: 40,
+        connect: "lower",
+        range: {
+            min: 0,
+            max: 100
+        }
+    });
+
+    window.$('#sliderDouble').noUiSlider({
+        start: [20, 60] ,
+        connect: true,
+        range: {
+            min: 0,
+            max: 100
+        }
+    });
+  }
+
   componentDidMount() {
-    /* window.
-        md.initSliders()
-        demo.initFormExtendedDatetimepickers();
-        demo.initMaterialWizard();
-    */
+    this.initSliders()
+    this.initDatetimepickers();
+    window.md.initMaterialWizardDemo();
   }
 
   render() {
@@ -16,28 +65,42 @@ export default class FormsPage extends React.Component {
         <div className="row">
           <div className="col-md-6">
             <div className="card">
-              <div data-background-color="rose" className="card-header card-header-icon">
-                <i className="material-icons">mail_outline</i>
-              </div>
-              <div className="card-content">
-                <h4 className="card-title">Stacked Form</h4>
-                <form action="regular.html#" method="#">
+              <form method action="validation.html" id="RegisterValidation">
+                <div data-background-color="rose" className="card-header card-header-icon">
+                  <i className="material-icons">mail_outline</i>
+                </div>
+                <div className="card-content">
+                  <h4 className="card-title">Register Forms</h4>
                   <div className="form-group label-floating">
-                    <label className="control-label">Email address</label>
-                    <input type="email" className="form-control" />
-                  </div>
-                  <div className="form-group label-floating">
-                    <label className="control-label">Password</label>
-                    <input type="password" className="form-control" />
-                  </div>
-                  <div className="checkbox">
-                    <label>
-                      <input type="checkbox" name="optionsCheckboxes" /> Subscribe to newsletter
+                    <label className="control-label">
+                      Email Address <small>*</small>
                     </label>
+                    <input type="email" required="true" name="email" className="form-control" />
                   </div>
-                  <button className="btn btn-fill btn-rose" type="submit">Submit</button>
-                </form>
-              </div>
+                  <div className="form-group label-floating">
+                    <label className="control-label">
+                      Password <small>*</small>
+                    </label>
+                    <input type="password" required="true" id="registerPassword" name="password" className="form-control" />
+                  </div>
+                  <div className="form-group label-floating">
+                    <label className="control-label">
+                      Confirm Password <small>*</small>
+                    </label>
+                    <input type="password" required="true" id="registerPasswordConfirmation" name="password_confirmation" className="form-control" />
+                  </div>
+                  <div className="category form-category">
+                    <small>*</small> Required fields</div>
+                  <div className="form-footer text-right">
+                    <div className="checkbox pull-left">
+                      <label>
+                        <input type="checkbox" name="optionsCheckboxes" /> Subscribe to newsletter
+                      </label>
+                    </div>
+                    <button className="btn btn-rose btn-fill" type="submit">Register</button>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
           <div className="col-md-6">
@@ -362,7 +425,7 @@ export default class FormsPage extends React.Component {
                     <div className="row">
                       <div className="col-lg-5 col-md-6 col-sm-3">
                         <select data-size={7} title="Single Select" data-style="btn btn-primary btn-round" className="selectpicker">
-                          <option selected disabled>Choose city</option>
+                          <option disabled>Choose city</option>
                           <option value={2}>Foobar</option>
                           <option value={3}>Is great</option>
                         </select>
@@ -671,7 +734,7 @@ export default class FormsPage extends React.Component {
                         <div className="form-group label-floating">
                           <label className="control-label">Country</label>
                           <select className="form-control" name="country">
-                            <option selected disabled />
+                            <option disabled />
                             <option value="Afghanistan"> Afghanistan </option>
                             <option value="Albania"> Albania </option>
                             <option value="Algeria"> Algeria </option>

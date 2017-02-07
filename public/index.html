@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>React Quickstart App</title>
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <!--
       Notice the use of %PUBLIC_URL% in the tag above.
@@ -13,7 +14,12 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <link rel="stylesheet" href="%PUBLIC_URL%/vendor/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="%PUBLIC_URL%/vendor/css/material-dashboard.css" />
+    <link rel="stylesheet" href="%PUBLIC_URL%/vendor/css/demo.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" />
+    <!-- Material icons reference here: https://design.google.com/icons/ -->
   </head>
   <body>
     <div id="root"></div>
@@ -27,5 +33,31 @@
       To begin the development, run `npm start`.
       To create a production bundle, use `npm run build`.
     -->
+
+    <!-- Ugly Dependencies - same are not part of NPM (but still need jQuery, Bootstrap, ...) -->
+    <script src="%PUBLIC_URL%/vendor/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <script src="%PUBLIC_URL%/vendor/js/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="%PUBLIC_URL%/vendor/js/bootstrap.min.js" type="text/javascript"></script>
+    <!-- Ripple effects and other styles -->
+    <script src="%PUBLIC_URL%/vendor/js/material.min.js" type="text/javascript"></script>
+    <!-- Scrollbar styles -->
+    <script src="%PUBLIC_URL%/vendor/js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
+    <!--  Plugin for the Form Wizard -->
+    <script src="%PUBLIC_URL%/vendor/js/jquery.bootstrap-wizard.js"></script>
+    <!--  Notifications Plugin    -->
+    <script src="%PUBLIC_URL%/vendor/js/bootstrap-notify.js"></script>
+    <!-- DateTimePicker Plugin + Moment dependency -->
+    <script src="%PUBLIC_URL%/vendor/js/moment.min.js"></script>
+    <script src="%PUBLIC_URL%/vendor/js/bootstrap-datetimepicker.js"></script>
+    <!-- Sliders Plugin -->
+    <script src="%PUBLIC_URL%/vendor/js/nouislider.min.js"></script>
+    <!-- Input/Select Plugin -->
+    <script src="%PUBLIC_URL%/vendor/js/jquery.select-bootstrap.js"></script>
+    <!-- Plugin for Fileupload, docs here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+    <script src="%PUBLIC_URL%/vendor/js/jasny-bootstrap.min.js"></script>
+    <!-- TagsInput Plugin -->
+    <script src="%PUBLIC_URL%/vendor/js/jquery.tagsinput.js"></script>
+    <!-- Material Dashboard javascript methods -->
+    <script src="%PUBLIC_URL%/vendor/js/material-dashboard.js"></script>
   </body>
 </html>
