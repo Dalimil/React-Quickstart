@@ -5,13 +5,18 @@ const images = {
   "defaultAvatar": require("./default-avatar.png"),
   "placeholder": require("./image-placeholder.jpg"),
   "placeholderSquare": require("./image-placeholder-square.jpg"),
-  "sidebarA": require("./sidebar-1.jpg"),
-  "sidebarB": require("./sidebar-2.jpg"),
-  "sidebarC": require("./sidebar-3.jpg"),
-  "sidebarD": require("./sidebar-4.jpg"),
+  "sidebarA": require("./backgrounds/sidebar/sidebar-1.jpg"),
+  "sidebarB": require("./backgrounds/sidebar/sidebar-2.jpg"),
+  "sidebarC": require("./backgrounds/sidebar/sidebar-3.jpg"),
+  "sidebarD": require("./backgrounds/sidebar/sidebar-4.jpg"),
   "cardA": require("./card-1.jpg"),
   "cardB": require("./card-2.jpg"),
-  "cardC": require("./card-3.jpg")
+  "cardC": require("./card-3.jpg"),
+  "backgroundLandingA": require("./backgrounds/dock.jpg"),
+  "backgroundLandingB": require("./backgrounds/forest.jpg"),
+  "backgroundLandingC": require("./backgrounds/lake.jpg"),
+  "backgroundLandingD": require("./backgrounds/mountains.jpg"),
+  "backgroundLandingE": require("./backgrounds/winter.jpg")
 };
 
 export default images;
