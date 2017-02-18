@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute, IndexRedirect, hashHistory } from 'react-router';
+import { Router, Route, IndexRoute, IndexRedirect, browserHistory } from 'react-router';
 
 import './index.css';
 import AppLayout from './components/dashboard/AppLayout';
@@ -34,7 +34,7 @@ class App extends React.Component {
 
 	render() {
 		return (
-			<Router history={hashHistory} >
+			<Router history={browserHistory} >
 				
 				<Route path="/login" component={LoginPage} />
 				<Route path="/register" component={RegisterPage} />

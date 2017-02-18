@@ -2,7 +2,7 @@
   "name": "react-quickstart",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://dalimil.github.io/React-Quickstart",
+  "homepage": "",
   "devDependencies": {
     "gh-pages": "^0.12.0",
     "react-scripts": "0.8.5"
@@ -19,6 +19,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "deploy": "yarn run build && gh-pages -d build"
+    "deploy": "echo Read the README.md file!!!",
+    "deploy:github": "yarn run build && gh-pages -d build"
   }
 }
