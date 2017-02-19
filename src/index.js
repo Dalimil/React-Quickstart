@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, IndexRedirect, browserHistory } from 'react-router';
 
 import './index.css';
+import { Auth } from './firebase';
 import AppLayout from './components/dashboard/AppLayout';
 
 import HomePage from './components/dashboard/pages/Home';
@@ -26,6 +27,21 @@ class App extends React.Component {
 		this.state = {
 			user: null
 		};
+	}
+
+	componentDidMount() {
+		Auth.observeAuthState(user => {
+			console.log(user);
+			if (user === undefined) {
+				// waiting for Auth result
+			} else if (user === null) {
+				// not authenticated, so auth now
+				setTimeout(Auth.authWithGoogle, 10000);
+			} else {
+				// logged in, so log out for demo puposes
+				setTimeout(Auth.signOut, 10000);
+			}
+		});
 	}
 
 	isLoggedIn() {
