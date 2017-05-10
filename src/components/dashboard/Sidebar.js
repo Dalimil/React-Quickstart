@@ -1,28 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom'
+
 import images from '../../assets';
 
-/**
- * Wrapper from StackOverflow: http://stackoverflow.com/questions/35053161/
- * to support changing active-classname on the wrapped <li> elements
- */
 class NavItem extends React.Component {
   render () {
-    const { router } = this.context;
     const { to, children, hasSublinks, ...props } = this.props;
-    const onlyActiveOnIndex = !hasSublinks; // = mostly true
-    const isActive = router.isActive(to, onlyActiveOnIndex);
-
     return (
-      <li className={isActive ? 'active' : ''}>
+      <li className={this.props.match ? 'active' : ''}>
         {hasSublinks ? children : <Link to={to} {...props}>{children}</Link>}
       </li>
     );
   }
 }
-NavItem.contextTypes = {
-  router: React.PropTypes.object
-};
 
 /**
  *  Left Sidebar with navigation

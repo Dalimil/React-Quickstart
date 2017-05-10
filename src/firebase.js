@@ -57,17 +57,17 @@ const Auth = new AuthGlobal();
 
 export { Auth };
 
-
+/*
 
 class FileStorageDemo {
   constructor() {
     this.storage = firebase.storage();
   }
 
-  /**
-   * Assume this HTML:
-   * <input type="file" value="upload" id="fileButton" />
-   */
+  
+   // Assume this HTML:
+   // <input type="file" value="upload" id="fileButton" />
+
   fileUploadDemo() {
     $("#fileButton").on('change', e => {
       const file = e.target.files[0];
@@ -90,10 +90,10 @@ class FileStorageDemo {
     });
   }
 
-  /**
-   * File download - need to configure CORS first (for XHR):
-   * https://firebase.google.com/docs/storage/web/download-files#cors_configuration
-   */
+  
+  // File download - need to configure CORS first (for XHR):
+  // https://firebase.google.com/docs/storage/web/download-files#cors_configuration
+  
   fileDownloadDemo() {
     this.storage.ref().child('images/stars.jpg').getDownloadURL().then(function(url) {
       // `url` is the download URL for 'images/stars.jpg'
@@ -117,3 +117,4 @@ class FileStorageDemo {
 }
 
 
+*/
